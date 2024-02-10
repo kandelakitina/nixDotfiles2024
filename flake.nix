@@ -12,6 +12,7 @@
       system = "x86_64-linux";
       lib = nixpkgs.lib;
       pkgs = nixpkgs.legacyPackages.${system};
+      inherit home-manager;
     in {
       nixosConfigurations = {
         boticelli = lib.nixosSystem {
