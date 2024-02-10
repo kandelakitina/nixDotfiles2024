@@ -5,7 +5,14 @@
     [
       ./hardware-configuration.nix
     ];
-
+    
+  nix = {
+    package = pkgs.nixFlakes;
+    extraOptions = ''
+        experimental-features = nix-command flakes
+    '';
+  };
+  
   boot.loader = {
     grub = {
       enable = true;
